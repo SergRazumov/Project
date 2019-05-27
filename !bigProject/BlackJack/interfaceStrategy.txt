@@ -1,0 +1,12 @@
+interface Strategy
+class HumanStrategy implements Strategy
+class CompStrategy implements Strategy {
+	Player player = Player (comp);
+}
+
+class Player(human) {
+	Strategy strategy = new HumanStrategy;
+}
+class Player(comp) {
+	Strategy strategy = new CompStrategy;
+}
