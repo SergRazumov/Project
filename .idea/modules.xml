@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Project.iml" filepath="$PROJECT_DIR$/.idea/Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!differentsSort/!Students+QuickSort/!Students+QuickSort.iml" filepath="$PROJECT_DIR$/!differentsSort/!Students+QuickSort/!Students+QuickSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!bigProject/BattleSea/BattleSea.iml" filepath="$PROJECT_DIR$/!bigProject/BattleSea/BattleSea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!bigProject/BlackJack/BlackJack.iml" filepath="$PROJECT_DIR$/!bigProject/BlackJack/BlackJack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" filepath="$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!differentsSort/quickSort+binaryFind/quickSort+binaryFind.iml" filepath="$PROJECT_DIR$/!differentsSort/quickSort+binaryFind/quickSort+binaryFind.iml" />
     </modules>
   </component>
 </project>

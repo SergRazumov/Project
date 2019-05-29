@@ -25,7 +25,7 @@ public class QSort {
             items[j] = items[i];
         }
         items[i] = e;
-        if (low < i-1) qsort(items, low, i);
-        if (j < high-1) qsort(items, j+1, high);
+        if (i-low >= 2) qsort(items, low, i);
+        if (high - j >= 2) qsort(items, j+1, high);
     }
 }
