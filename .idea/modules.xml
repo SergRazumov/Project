@@ -7,7 +7,22 @@
       <module fileurl="file://$PROJECT_DIR$/!bigProject/BlackJack/BlackJack.iml" filepath="$PROJECT_DIR$/!bigProject/BlackJack/BlackJack.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" filepath="$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" filepath="$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/circleList/circleList+Test+Exception.iml" filepath="$PROJECT_DIR$/!listType/circleList/circleList+Test+Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!threads/dedlock/dedlock.iml" filepath="$PROJECT_DIR$/!threads/dedlock/dedlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!threads/diferentThreads/diferentThreads.iml" filepath="$PROJECT_DIR$/!threads/diferentThreads/diferentThreads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!differentsSort/findMediana+quickSort/findMediana+quickSort.iml" filepath="$PROJECT_DIR$/!differentsSort/findMediana+quickSort/findMediana+quickSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/listSorting/listSorting.iml" filepath="$PROJECT_DIR$/!listType/listSorting/listSorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/listUseIterable/listUseIterable.iml" filepath="$PROJECT_DIR$/!listType/listUseIterable/listUseIterable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/lists+Test/lists+Test.iml" filepath="$PROJECT_DIR$/!listType/lists+Test/lists+Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!threads/myThread/myThread.iml" filepath="$PROJECT_DIR$/!threads/myThread/myThread.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/quickSort+binaryFind/quickSort+binaryFind.iml" filepath="$PROJECT_DIR$/!differentsSort/quickSort+binaryFind/quickSort+binaryFind.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!differentsSort/quickSort+findNumber/quickSort+findNumber.iml" filepath="$PROJECT_DIR$/!differentsSort/quickSort+findNumber/quickSort+findNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/sberTreeCorrect/sberTreeCorrect.iml" filepath="$PROJECT_DIR$/!listType/sberTreeCorrect/sberTreeCorrect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/setHashMapDictionary/setHashMapDictionary.iml" filepath="$PROJECT_DIR$/!listType/setHashMapDictionary/setHashMapDictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" filepath="$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" filepath="$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!listType/trie/trie.iml" filepath="$PROJECT_DIR$/!listType/trie/trie.iml" />
     </modules>
   </component>
 </project>
