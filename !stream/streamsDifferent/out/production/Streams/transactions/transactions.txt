@@ -1,7 +1,0 @@
-User1   D   25
-User2   C   12
-User3   C   15
-User1   C   20
-User1   C   10
-User2   D   15
-User3   D   20

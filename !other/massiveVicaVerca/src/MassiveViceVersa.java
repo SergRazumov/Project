@@ -1,5 +1,3 @@
-package com.teach.sergey;
-
 public class MassiveViceVersa {
     public static void main(String args[]) {
         MassiveViceVersa o = new MassiveViceVersa();
