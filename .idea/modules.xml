@@ -31,7 +31,6 @@
       <module fileurl="file://$PROJECT_DIR$/!listType/lists+Test/lists+Test.iml" filepath="$PROJECT_DIR$/!listType/lists+Test/lists+Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/londNumberInMassive/londNumberInMassive.iml" filepath="$PROJECT_DIR$/!other/londNumberInMassive/londNumberInMassive.iml" />
       <module fileurl="file://$PROJECT_DIR$/!recursionProjects/manyRecursion/manyRecursion.iml" filepath="$PROJECT_DIR$/!recursionProjects/manyRecursion/manyRecursion.iml" />
-      <module fileurl="file://$PROJECT_DIR$/!stream/mapStream/mapStream.iml" filepath="$PROJECT_DIR$/!stream/mapStream/mapStream.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/massiveVicaVerca/massiveVicaVerca.iml" filepath="$PROJECT_DIR$/!other/massiveVicaVerca/massiveVicaVerca.iml" />
       <module fileurl="file://$PROJECT_DIR$/!recursionProjects/matrixPiramid/matrixPiramid.iml" filepath="$PROJECT_DIR$/!recursionProjects/matrixPiramid/matrixPiramid.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/maxLongNumbersInMassiv/maxLongNumbersInMassiv.iml" filepath="$PROJECT_DIR$/!other/maxLongNumbersInMassiv/maxLongNumbersInMassiv.iml" />
@@ -49,7 +48,6 @@
       <module fileurl="file://$PROJECT_DIR$/!stream/streamsDifferent/streamsDifferent.iml" filepath="$PROJECT_DIR$/!stream/streamsDifferent/streamsDifferent.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" filepath="$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" filepath="$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/!listType/trie/trie.iml" filepath="$PROJECT_DIR$/!listType/trie/trie.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/workWithTriangle/workWithTriangle.iml" filepath="$PROJECT_DIR$/!other/workWithTriangle/workWithTriangle.iml" />
     </modules>
   </component>
