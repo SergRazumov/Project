@@ -2,8 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/!listType/listUseIterable" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/!listType/trie" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/!stream/mapStream" vcs="Git" />
   </component>
 </project>
