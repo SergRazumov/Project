@@ -38,9 +38,9 @@ public class Main {
         merge(list, low, m, high);
     }
 
-    private static ArrayList<Student> readStudents() {
+    private static ArrayList<Student> readStudents(String file) {
         ArrayList<Student> listStud = new ArrayList<>();
-        try (Scanner scan = new Scanner(new File("students.txt"))) {
+        try (Scanner scan = new Scanner(new File(file))) {
             scan.useLocale(new Locale("ru", "RU"));
             while (scan.hasNext()) {
                 listStud.add(new Student(scan.next(), scan.next(), scan.nextInt(), scan.nextDouble()));
@@ -53,12 +53,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        ArrayList<Student> listStud = readStudents();
+        ArrayList<Student> listStud = readStudents(args[0]);
         System.out.println(listStud);
         Collections.sort(listStud);
         System.out.println(listStud);
 
-        listStud = readStudents();
+        listStud = readStudents(args[0]);
         System.out.println(listStud);
         listStud.sort(new Comparator<Student>() {
 
@@ -69,7 +69,7 @@ public class Main {
         });
         System.out.println(listStud);
 
-        listStud = readStudents();
+        listStud = readStudents(args[0]);
         System.out.println(listStud);
         mergeSort(listStud, 0, listStud.size());
         System.out.println(listStud);

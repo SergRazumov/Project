@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PathMatrix.iml" filepath="$PROJECT_DIR$/PathMatrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pathMatrix.iml" filepath="$PROJECT_DIR$/pathMatrix.iml" />
     </modules>
   </component>
 </project>

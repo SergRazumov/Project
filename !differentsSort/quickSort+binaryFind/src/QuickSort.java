@@ -4,7 +4,7 @@ public class QuickSort {
     public static void main(String args[]) {
         int a[] = {4,5,7,2,1,8,6,3};
         System.out.println(Arrays.toString(sort(a,0,a.length)));
-        System.out.println(findNumber(1, a));
+        System.out.println(findNumber(9, a));
     }
 
     private static int findNumber(int num, int a[]) {
@@ -12,12 +12,12 @@ public class QuickSort {
         int j = a.length;
         int p = a.length/2;
         while (j!=i) {
-            if (num > a[p]) {i = p;}
-            else if(num < a[p]) {j = p-1;}
+            if (num > a[p]) {i = p+1;}
+            else if(num < a[p]) {j = p;}
             else return p;
-            p = (j+i)/2+1;
+            p = (j+i)/2;
         }
-        if(a[i] == num) return i; else return 0;
+        return -1;
     }
 
 

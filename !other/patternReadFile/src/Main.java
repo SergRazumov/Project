@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) {
         List<Student> list = new ArrayList<>();
-        readFile("src/Student.txt", list);
+        readFile("!other/patternReadFile/src/Student.txt", list);
         System.out.print(list.get(0).getString());
     }
 
