@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Graph {
 
@@ -126,7 +127,7 @@ public class Graph {
         // 2. Волна
         listCity[cityFrom].setDistance(0);
         listCity[cityFrom].setColor(Color.BLACK);
-        while (listCity[cityMap.get(v)].getColor() != Color.GREY && listCity[cityMap.get(v)].getColor() != Color.BLACK) {
+        while (listCity[cityMap.get(v)].getColor() != Color.BLACK) {
             for (Road road : cities[cityFrom].roads) {
                 if (listCity[road.endCity].getColor() != Color.BLACK) {
                     listCity[road.endCity].setColor(Color.GREY);
@@ -136,19 +137,24 @@ public class Graph {
                     }
                 }
             }
+
+            int distance = Integer.MAX_VALUE;
             for (int i = 0; i < listCity.length; i++) {
-                if (listCity[i].getColor() == Color.GREY) {
-                    listCity[i].setColor(Color.BLACK);
-                    cityFrom = i;
-                    break;
+                if (listCity[i].getColor() == Color.GREY && listCity[i].getDistance()< distance) {
+                    distance = listCity[i].getDistance();
+                    cityFrom =i;
                 }
             }
+            if (distance == Integer.MAX_VALUE) return null;
+            listCity[cityFrom].setColor(Color.BLACK);
         }
         // 3. Построение пути
         city.add(v);
-        int from = listCity[cityMap.get(v)].getCityFrom();
-        while (true) {
-            city.add(cities[listCity[from].getCityFrom()].name);
+
+        while (!v.equals(u)) {
+            int from = listCity[cityMap.get(v)].getCityFrom();
+            city.add(0,cities[from].name);
+            v = cities[from].name;
         }
         return city;
     }
