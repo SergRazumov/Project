@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Stream;
 
 public class Graph {
 
@@ -118,26 +117,37 @@ public class Graph {
     public List<String> minPathHeavy(String u, String v) {
         if (cityMap.get(u) == null || cityMap.get(v) == null) throw new IllegalArgumentException();
         // 1. Инициализация
+        PriorQueue queue = new PriorQueue(cities.length);
         int cityFrom = cityMap.get(u);
         List<String> city = new ArrayList<>();
-        infoAboutCity[] listCity = new infoAboutCity[cities.length];
+        InfoAboutCity[] listCity = new InfoAboutCity[cities.length];
         for (int i = 0; i < listCity.length; i++) {
-            listCity[i] = new infoAboutCity(Color.WHITE, Integer.MAX_VALUE);
+            listCity[i] = new InfoAboutCity(Color.WHITE, Integer.MAX_VALUE, i);
         }
         // 2. Волна
         listCity[cityFrom].setDistance(0);
         listCity[cityFrom].setColor(Color.BLACK);
         while (listCity[cityMap.get(v)].getColor() != Color.BLACK) {
             for (Road road : cities[cityFrom].roads) {
-                if (listCity[road.endCity].getColor() != Color.BLACK) {
+                if (listCity[road.endCity].getColor() == Color.WHITE) {
                     listCity[road.endCity].setColor(Color.GREY);
-                    if(listCity[cityFrom].getDistance()+road.length<listCity[road.endCity].getDistance()) {
+                    listCity[road.endCity].setDistance(listCity[cityFrom].getDistance() + road.length);
+                    listCity[road.endCity].setCityFrom(cityFrom);
+                    queue.addElement(listCity[road.endCity]);
+                }
+                else if (listCity[road.endCity].getColor() == Color.GREY) {
+                    if (listCity[cityFrom].getDistance() + road.length < listCity[road.endCity].getDistance()) {
                         listCity[road.endCity].setDistance(listCity[cityFrom].getDistance() + road.length);
                         listCity[road.endCity].setCityFrom(cityFrom);
+                        queue.changePriority(listCity[road.endCity]);
                     }
                 }
             }
-
+            if(!queue.isEmpty()) {
+                InfoAboutCity distance = queue.removeMin();
+                cityFrom = distance.getIndex();
+            } else return null;
+            /* Простой перебор
             int distance = Integer.MAX_VALUE;
             for (int i = 0; i < listCity.length; i++) {
                 if (listCity[i].getColor() == Color.GREY && listCity[i].getDistance()< distance) {
@@ -146,17 +156,20 @@ public class Graph {
                 }
             }
             if (distance == Integer.MAX_VALUE) return null;
+            */
             listCity[cityFrom].setColor(Color.BLACK);
+
         }
         // 3. Построение пути
         city.add(v);
 
         while (!v.equals(u)) {
             int from = listCity[cityMap.get(v)].getCityFrom();
-            city.add(0,cities[from].name);
+            city.add(0, cities[from].name);
             v = cities[from].name;
         }
         return city;
     }
+
 
 }

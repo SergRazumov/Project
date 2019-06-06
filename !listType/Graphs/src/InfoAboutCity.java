@@ -1,12 +1,14 @@
-public class infoAboutCity {
+public class InfoAboutCity {
 
     private Color color;
     private int distance;
     private int cityFrom;
+    private int index;
 
-    public infoAboutCity(Color color, int distance) {
+    public InfoAboutCity(Color color, int distance, int index) {
         this.color = color;
         this.distance = distance;
+        this.index = index;
     }
 
     public Color getColor() {
@@ -33,4 +35,11 @@ public class infoAboutCity {
         this.cityFrom = cityFrom;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 }
