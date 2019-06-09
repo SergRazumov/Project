@@ -88,7 +88,7 @@ public class Graph {
         Arrays.fill(tree, -1);
         int from = cityMap.get(v);
         // 2. Волна
-        while (!greys.contains(from) && !greys.isEmpty()) { // **
+        while (!greys.contains(from) && !greys.isEmpty()) {
             Integer a = greys.poll();
             blacks.add(a);
             for (Road road : cities[a].roads) {
@@ -100,7 +100,6 @@ public class Graph {
         }
         if (greys.isEmpty()) return null;
         // 3. Построение пути
-        city.add(v);
         while (!city.contains(u)) {
             int to = tree[from];
             city.add(cities[from].name);
@@ -127,7 +126,7 @@ public class Graph {
         // 2. Волна
         listCity[cityFrom].setDistance(0);
         listCity[cityFrom].setColor(Color.BLACK);
-        while (listCity[cityMap.get(v)].getColor() != Color.BLACK) {
+        while (listCity[cityMap.get(v)].getColor() != Color.BLACK) { // Перебор с приоритетной очередью
             for (Road road : cities[cityFrom].roads) {
                 if (listCity[road.endCity].getColor() == Color.WHITE) {
                     listCity[road.endCity].setColor(Color.GREY);
@@ -139,7 +138,7 @@ public class Graph {
                     if (listCity[cityFrom].getDistance() + road.length < listCity[road.endCity].getDistance()) {
                         listCity[road.endCity].setDistance(listCity[cityFrom].getDistance() + road.length);
                         listCity[road.endCity].setCityFrom(cityFrom);
-                        queue.changePriority(listCity[road.endCity]);
+                        queue.raisePriority(listCity[road.endCity]);
                     }
                 }
             }

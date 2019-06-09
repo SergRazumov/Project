@@ -4,7 +4,7 @@ public interface PriorityQueque<T> {
 
     T removeMin();
 
-    void changePriority (T t);
+    void raisePriority (T t);
 
     boolean isEmpty();
 }

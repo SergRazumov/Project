@@ -4,6 +4,7 @@ public class InfoAboutCity {
     private int distance;
     private int cityFrom;
     private int index;
+    private int indexQueue;
 
     public InfoAboutCity(Color color, int distance, int index) {
         this.color = color;
@@ -39,7 +40,11 @@ public class InfoAboutCity {
         return index;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public int getIndexQueue() {
+        return indexQueue;
+    }
+
+    public void setIndexQueue(int indexQueue) {
+        this.indexQueue = indexQueue;
     }
 }
