@@ -56,13 +56,14 @@ public class PriorQueue implements PriorityQueque<InfoAboutCity> {
     }
 
     private void changePriorityMinValue(InfoAboutCity infoAboutCity) {
-        int i = (size - 1) / 2;
+        int i = (infoAboutCity.getIndexQueue() - 1) / 2;
         while (queue[i].getDistance() > infoAboutCity.getDistance()) {
             InfoAboutCity a = queue[i];
+            int indexQueue = infoAboutCity.getIndexQueue();
             queue[i] = infoAboutCity;
             queue[i].setIndexQueue(i);
-            queue[size] = a;
-            queue[size].setIndexQueue(size);
+            queue[indexQueue] = a;
+            queue[indexQueue].setIndexQueue(indexQueue);
             i = (i - 1) / 2;
         }
     }
