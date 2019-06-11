@@ -11,7 +11,7 @@ public class PriorQueue implements PriorityQueque<InfoAboutCity> {
     public void addElement(InfoAboutCity infoAboutCity) {
         queue[size] = infoAboutCity;
         infoAboutCity.setIndexQueue(size);
-        changePriorityMinValue(infoAboutCity);
+        changePriorityInfoAboutCity(infoAboutCity);
         size++;
     }
 
@@ -51,11 +51,11 @@ public class PriorQueue implements PriorityQueque<InfoAboutCity> {
     @Override
     public void raisePriority(InfoAboutCity infoAboutCity) {
         size--;
-        changePriorityMinValue(infoAboutCity);
+        changePriorityInfoAboutCity(infoAboutCity);
         size++;
     }
 
-    private void changePriorityMinValue(InfoAboutCity infoAboutCity) {
+    private void changePriorityInfoAboutCity(InfoAboutCity infoAboutCity) {
         int i = (infoAboutCity.getIndexQueue() - 1) / 2;
         while (queue[i].getDistance() > infoAboutCity.getDistance()) {
             InfoAboutCity a = queue[i];
