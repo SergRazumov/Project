@@ -1,0 +1,16 @@
+Index: !recursionProjects/manyRecursion/src/Recursion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- !recursionProjects/manyRecursion/src/Recursion.java	(revision 5180a02c3cfda9cad80c4f7ee98442f9592cf2fa)
++++ !recursionProjects/manyRecursion/src/Recursion.java	(revision 8b14f32f404c3e69297c79fcf8047802dd15a3c6)
+@@ -53,7 +53,7 @@
+     }
+ 
+     private static int progressionZeroAndOne(int a, int b) {
+-
++        
+     }
+ 
+ 
