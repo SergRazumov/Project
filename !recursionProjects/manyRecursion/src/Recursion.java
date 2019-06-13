@@ -48,14 +48,14 @@ public class Recursion {
         //        "В этой задаче можно использовать цикл для перебора всех цифр, стоящих на какой-либо позиции.");
         //System.out.println(recursion(0, 0, 3, 15));
         System.out.println("Даны числа a и b. Определите, сколько существует последовательностей из a нулей и b единиц, в которых никакие два нуля не стоят рядом.");
-        System.out.println(progressionZeroAndOne(3,4));
+//        System.out.println(progressionZeroAndOne(3,4));
 
     }
-
+/*
     private static int progressionZeroAndOne(int a, int b) {
 
     }
-
+*/
 
     public static int recursion(int len, int sum, int k, int s) {
         return 0;
