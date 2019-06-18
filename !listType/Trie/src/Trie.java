@@ -70,6 +70,7 @@ public class Trie<T> {
         put(root, translation, key);
     }
 
+
     private void put(Node<T> root, T translation, String key) {
         if (key.isEmpty()) {
             root.translations = translation;
@@ -81,26 +82,23 @@ public class Trie<T> {
         }
         put(arc.node, translation, key.substring(1));
     }
-    //TODO: В последующем хочется сделать обзор по всему дереву ключи - значения.
 
     /**
-     * Метод который будет выводить все ключи с объектом, рекурсивно?
+     * Метод который будет выводить все ключи с объектом
      */
 
     public void viewRoot() {
         viewRoot(root, "");
     }
 
-    private void viewRoot(Node<T> node, String prefix) {
-        if (node.translations != null) {
-            System.out.println("[" + prefix + ", " + node.translations + "]");
+    private void viewRoot(Node<T> current, String str) {
+        if(current.translations!= null) {
+            System.out.println(str + " " + current.translations);
         }
-        for (Arc<T> child : node.children) {
-            viewRoot(child.node, prefix + child.let);
+            for(Arc<T> child:current.children) {
+                viewRoot(child.node, str+ child.let);
         }
     }
-
-
     /**
      * @param key ключ по которому возвращаем объект
      * @return возвращаем объект по заданному ключу, если не обнаружен null

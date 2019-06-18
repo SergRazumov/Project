@@ -1,4 +1,4 @@
-public class Main {
+public class HashMain {
     public static void main(String[] args) {
 
         MyHashMap.myHashMap.put("ONE" , 5);
@@ -6,5 +6,12 @@ public class Main {
         MyHashMap.myHashMap.put("THREE" , 8);
         MyHashMap.myHashMap.put("FOUR" , 12);
         MyHashMap.myHashMap.put("FIVE" , 3);
+        MyHashMap.myHashMap.put("ONE" , 7);
+
+        for(Object elem:MyHashMap.myHashMap) { //почему Object;
+         System.out.print(elem);
+
+        }
+        }
     }
-}
+
