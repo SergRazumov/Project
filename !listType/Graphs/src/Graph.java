@@ -1,3 +1,5 @@
+import priorityqueue.PriorQueue;
+
 import java.util.*;
 
 public class Graph {
@@ -116,7 +118,7 @@ public class Graph {
     public List<String> minPathHeavy(String u, String v) {
         if (cityMap.get(u) == null || cityMap.get(v) == null) throw new IllegalArgumentException();
         // 1. Инициализация
-        PriorQueue queue = new PriorQueue(cities.length);
+        PriorQueue<InfoAboutCity> queue = new PriorQueue(cities.length);
         int cityFrom = cityMap.get(u);
         List<String> city = new ArrayList<>();
         InfoAboutCity[] listCity = new InfoAboutCity[cities.length];

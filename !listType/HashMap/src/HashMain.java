@@ -8,7 +8,7 @@ public class HashMain {
         MyHashMap.myHashMap.put("FIVE" , 3);
         MyHashMap.myHashMap.put("ONE" , 7);
 
-        for(Object elem:MyHashMap.myHashMap) { //почему Object;
+        for(Elem<String, Integer> elem:MyHashMap.myHashMap) { //почему Object;
          System.out.print(elem);
 
         }

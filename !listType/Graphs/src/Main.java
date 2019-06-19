@@ -60,6 +60,6 @@ public class Main {
         Graph g = readFile(args[0]);
         System.out.println(g.minPath("G", "A"));
         g = readFile(args[1]);
-        System.out.println(g.minPathHeavy("C", "E"));
+        System.out.println(g.minPathHeavy("A", "E"));
     }
 }

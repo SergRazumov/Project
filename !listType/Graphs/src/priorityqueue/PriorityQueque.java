@@ -1,3 +1,5 @@
+package priorityqueue;
+
 public interface PriorityQueque<T> {
 
     void addElement(T t);

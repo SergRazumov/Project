@@ -22,4 +22,8 @@ public class Elem<T, V> {
     public void setValue(V value) {
         this.value = value;
     }
+
+    public String toString() {
+        return "[" + getKey() + ", " + getValue() + "]";
+    }
 }

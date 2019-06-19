@@ -1,4 +1,6 @@
-public class InfoAboutCity {
+import priorityqueue.PrioQueueElement;
+
+public class InfoAboutCity implements PrioQueueElement {
 
     private Color color;
     private int distance;
