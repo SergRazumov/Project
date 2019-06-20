@@ -39,7 +39,7 @@ public class Lists {
                 }
             }
         }
-    }, "reader");
+    }, "read");
 
     public int getValue() {
         return value;

@@ -46,7 +46,7 @@ public class HashDictionary implements Dictionary {
     @Override
     public Iterator<String> iterator() {
         // TODO: Это всего лишь "заглушка" - заменить на рабочеее тело метода
-        return new Iterator() {
+        return new Iterator<>() {
             private int listCnt;
             private Iterator<String> wordIter;
 

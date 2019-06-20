@@ -5,7 +5,7 @@ import java.util.List;
 public class MyHashMap implements Iterable<Elem<String, Integer>>{
 
     public final static MyHashMap myHashMap = new MyHashMap();
-    private List<Elem<String, Integer>>[] hashMap = (List<Elem<String, Integer>>[]) new ArrayList[10];
+    private List<Elem<String, Integer>>[] hashMap = new ArrayList[10];
 
     public void put(String key, int value) {
         int index = Math.abs(key.toLowerCase().hashCode() % 10);
@@ -51,12 +51,12 @@ public class MyHashMap implements Iterable<Elem<String, Integer>>{
                 if (!hasNext()) throw new IllegalStateException();
                 Elem<String, Integer> retElem = current.next();
                 if (!current.hasNext()) {
-                    while (i < hashMap.length) {
-                        i++;
+                    while (++i < hashMap.length) {
                         if (hashMap[i] != null) {
                             current = hashMap[i].iterator();
                             break;
                         }
+
                     }
                 }
                 return retElem;

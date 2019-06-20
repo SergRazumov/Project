@@ -9,14 +9,18 @@ public class MyTest {
 
     public static void main(String[] args) {
         List<Runnable> listR = new ArrayList<>();
-        for (int i = 0; i < 10; i++) listR.add(()->{ for (int k = 0; k < 10000; k++) {
-            int n;
-            do {
-                n = ii.get();
-                if (ii.compareAndSet(n, n+10)) break;
-            }
-            while (true) ;
-        }});
+        for (int i = 0; i < 10; i++) {
+            listR.add(() -> {
+                for (int k = 0; k < 10000; k++) {
+                    int n;
+                    do {
+                        n = ii.get();
+                        if (ii.compareAndSet(n, n + 10)) break;
+                    }
+                    while (true);
+                }
+            });
+        }
         listR.parallelStream().forEach(r -> r.run());
 
 
