@@ -52,6 +52,6 @@ public class ConcurrentStack<E> {
                 }
             }));
         }
-        threads.forEach(t -> t.start());
+        threads.forEach(Thread::start);
     }
 }

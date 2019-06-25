@@ -29,8 +29,9 @@ public class Lists {
         while (cnt < count) {
             synchronized (listComposition) {
                 try {
-                    while (listComposition.isEmpty())
+                    while (listComposition.isEmpty()) {
                         listComposition.wait();
+                    }
                     value += listComposition.remove(0);
                     cnt++;
                     listComposition.notifyAll();

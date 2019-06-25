@@ -15,7 +15,7 @@ public class Test {
         t1.start();
         t2.start();
         try {
-            Thread.sleep(1);
+            Thread.sleep(100);
         } catch (InterruptedException e) {}
         System.out.println("Finish");
         try {
