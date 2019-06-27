@@ -13,12 +13,15 @@
       <module fileurl="file://$PROJECT_DIR$/!listType/Graphs/Graphs.iml" filepath="$PROJECT_DIR$/!listType/Graphs/Graphs.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/HashMap/HashMap.iml" filepath="$PROJECT_DIR$/!listType/HashMap/HashMap.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/MiniMax/MiniMax.iml" filepath="$PROJECT_DIR$/!other/MiniMax/MiniMax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Observer/MyObserver/MyObserver.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Observer/MyObserver/MyObserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Observer/ObserverLibrary/ObserverLibrary.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Observer/ObserverLibrary/ObserverLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" filepath="$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Strategy/Strategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPatterns/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/DesignPatterns/Strategy/Strategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" filepath="$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/Trie/Trie.iml" filepath="$PROJECT_DIR$/!listType/Trie/Trie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!differentsSort/bubbleSort/bubbleSort.iml" filepath="$PROJECT_DIR$/!differentsSort/bubbleSort/bubbleSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/calendarBirthday/calendarBirthday.iml" filepath="$PROJECT_DIR$/!other/calendarBirthday/calendarBirthday.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/circleList/circleList+Test+Exception.iml" filepath="$PROJECT_DIR$/!listType/circleList/circleList+Test+Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/coordinatePerimetr/coordinatePerimetr.iml" filepath="$PROJECT_DIR$/!other/coordinatePerimetr/coordinatePerimetr.iml" />
