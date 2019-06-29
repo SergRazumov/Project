@@ -18,7 +18,6 @@
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" filepath="$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Strategy/Strategy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DesignPatterns/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/DesignPatterns/Strategy/Strategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" filepath="$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/Trie/Trie.iml" filepath="$PROJECT_DIR$/!listType/Trie/Trie.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/bubbleSort/bubbleSort.iml" filepath="$PROJECT_DIR$/!differentsSort/bubbleSort/bubbleSort.iml" />
