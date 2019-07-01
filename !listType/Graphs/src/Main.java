@@ -57,9 +57,10 @@ public class Main {
      */
 
     public static void main(String[] args) {
-        Graph g = readFile(args[0]);
+        Graph g = readFile("!listType\\Graphs\\graph.txt");
         System.out.println(g.minPath("G", "A"));
-        g = readFile(args[1]);
+        g = readFile("!listType\\Graphs\\heavyGraph.txt");
         System.out.println(g.minPathHeavy("A", "E"));
+        g = readFile("!listType\\Graphs\\graph.txt");
     }
 }
