@@ -38,6 +38,7 @@ public class Graph {
 
     private final City[] cities;
     private final Map<String, Integer> cityMap;
+    private int currentForDeepFind = 0;
 
     /**
      * @param cityNames множество из городов
@@ -135,8 +136,7 @@ public class Graph {
                     listCity[road.endCity].setDistance(listCity[cityFrom].getDistance() + road.length);
                     listCity[road.endCity].setCityFrom(cityFrom);
                     queue.addElement(listCity[road.endCity]);
-                }
-                else if (listCity[road.endCity].getColor() == Color.GREY) {
+                } else if (listCity[road.endCity].getColor() == Color.GREY) {
                     if (listCity[cityFrom].getDistance() + road.length < listCity[road.endCity].getDistance()) {
                         listCity[road.endCity].setDistance(listCity[cityFrom].getDistance() + road.length);
                         listCity[road.endCity].setCityFrom(cityFrom);
@@ -144,7 +144,7 @@ public class Graph {
                     }
                 }
             }
-            if(!queue.isEmpty()) {
+            if (!queue.isEmpty()) {
                 InfoAboutCity distance = queue.removeMin();
                 cityFrom = distance.getIndex();
             } else return null;
@@ -172,5 +172,35 @@ public class Graph {
         return city;
     }
 
+    public boolean pathDeep(String u, String v) {
+        if (cityMap.get(u) == null || cityMap.get(v) == null) throw new IllegalArgumentException();
+        // 1. Инициализация
+        InfoAboutCityForDeepFind[] tree = new InfoAboutCityForDeepFind[cities.length];
+        for (int i = 0; i < tree.length; i++) {
+            tree[i] = new InfoAboutCityForDeepFind(Color.WHITE);
+        }
+        int from = cityMap.get(u);
+        int to = cityMap.get(v);
+        // 2. Реализация
+        return pathDeep(tree, from, to);
+    }
 
+    private boolean pathDeep(InfoAboutCityForDeepFind[] tree, int from, int to) {
+        if (tree[to].color != Color.WHITE) {
+            return true;
+        }
+        tree[from].color = Color.GREY;
+        tree[from].setTimeIn(++currentForDeepFind);
+        for (Road road : cities[from].roads) {
+            if (tree[road.endCity].color == Color.WHITE) {
+                if (tree[to].color != Color.WHITE) break;
+                pathDeep(tree, road.endCity, to);
+            }
+        }
+        tree[from].color = Color.BLACK;
+        tree[from].setTimeOut(++currentForDeepFind);
+        if (tree[to].color != Color.WHITE) {
+            return true;
+        } else return false;
+    }
 }

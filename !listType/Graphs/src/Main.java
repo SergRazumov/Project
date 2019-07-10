@@ -61,6 +61,9 @@ public class Main {
         System.out.println(g.minPath("G", "A"));
         g = readFile("!listType\\Graphs\\heavyGraph.txt");
         System.out.println(g.minPathHeavy("A", "E"));
-        g = readFile("!listType\\Graphs\\graph.txt");
+        g = readFile("!listType\\Graphs\\deepGraph.txt");
+        if(g.pathDeep("A", "E")) {
+            System.out.println("Путь найден");
+        } else System.out.println("Пути нет");
     }
 }

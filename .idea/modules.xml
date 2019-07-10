@@ -59,6 +59,7 @@
       <module fileurl="file://$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" filepath="$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/threadsTask/threadsTask.iml" filepath="$PROJECT_DIR$/!threads/threadsTask/threadsTask.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" filepath="$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!other/useEvents/useEvents.iml" filepath="$PROJECT_DIR$/!other/useEvents/useEvents.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/workWithTriangle/workWithTriangle.iml" filepath="$PROJECT_DIR$/!other/workWithTriangle/workWithTriangle.iml" />
     </modules>
   </component>
