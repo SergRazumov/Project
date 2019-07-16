@@ -13,28 +13,16 @@ public class Main {
         trades.add(new Trade("Grey", "a", new BigDecimal(310)));
         trades.add(new Trade("Grey", "a", new BigDecimal(-310)));
         trades.add(new Trade("White", "c", new BigDecimal(-50)));
-        System.out.print(getErrors(trades));
+        getErrors(trades);
     }
 
 
 
-    private static Set<Integer> getErrors(List<Trade> trades) {
-        Set<Integer> set = new HashSet<>();
-        List<Integer> res = new ArrayList<>();
+    private static void getErrors(List<Trade> trades) {
+        Map<MyKey, List<BigDecimal>> map = new HashMap<>();
         for(Trade trade: trades) {
-            if(trade.getAmount().intValue()<=0) {
-                set.add(trade.getAmount().intValue());
-            }
+            MyKey myKey = new MyKey(trade.getParameter(), trade.getTradeID());
+            map.put(myKey, myKey.addValue(trade.getAmount()));
         }
-        for(Trade trade: trades) {
-            if(set.contains(Math.abs(trade.getAmount().intValue()))) {
-                set.remove(trade.getAmount().intValue());
-                trades.remove(trade);
-            }
-        }
-        for(Trade trade: trades) {
-            set.add(trade.getAmount().intValue());
-        }
-        return set;
     }
 }
