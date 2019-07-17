@@ -13,13 +13,11 @@ public class MyKey {
     public MyKey(String parameter, String tradeID) {
         this.tradeID = tradeID;
         this.parameter = parameter;
-        listAmount = new ArrayList<>();
     }
 
-    public List<BigDecimal> addValue(BigDecimal amount) {
-        if(listAmount.isEmpty()) {
-            amount.add(amount);
-        }
+    public List<BigDecimal> addValue(BigDecimal value) {
+        listAmount = new ArrayList<>();
+        listAmount.add(value);
         return listAmount;
     }
 
@@ -28,8 +26,14 @@ public class MyKey {
         if (this == o) return true;
         if (!(o instanceof MyKey)) return false;
         MyKey myKey = (MyKey) o;
-        return Objects.equals(tradeID, myKey.tradeID) &&
-                Objects.equals(parameter, myKey.parameter);
+        for(BigDecimal value: this.listAmount) {
+            if(value.equals(myKey.listAmount.get(0))) {
+                return false;
+            }
+        }
+        this.listAmount.add(myKey.listAmount.get(0));
+       // this.hashCode() = Integer.parseInt(null);
+        return true;
     }
 
     @Override
@@ -37,4 +41,7 @@ public class MyKey {
         return Objects.hash(tradeID, parameter);
     }
 
+    public List<BigDecimal> getListAmount() {
+        return listAmount;
+    }
 }

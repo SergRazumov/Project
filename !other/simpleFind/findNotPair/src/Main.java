@@ -23,6 +23,8 @@ public class Main {
         for(Trade trade: trades) {
             MyKey myKey = new MyKey(trade.getParameter(), trade.getTradeID());
             map.put(myKey, myKey.addValue(trade.getAmount()));
+
+//            map.get(myKey).add(trade.getAmount());
         }
     }
 }
