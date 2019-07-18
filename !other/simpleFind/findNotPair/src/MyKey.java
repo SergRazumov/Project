@@ -24,16 +24,10 @@ public class MyKey {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MyKey)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         MyKey myKey = (MyKey) o;
-        for(BigDecimal value: this.listAmount) {
-            if(value.equals(myKey.listAmount.get(0))) {
-                return false;
-            }
-        }
-        this.listAmount.add(myKey.listAmount.get(0));
-       // this.hashCode() = Integer.parseInt(null);
-        return true;
+        return Objects.equals(tradeID, myKey.tradeID) &&
+                Objects.equals(parameter, myKey.parameter);
     }
 
     @Override
