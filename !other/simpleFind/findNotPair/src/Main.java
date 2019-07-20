@@ -37,13 +37,22 @@ public class Main {
         for(List<BigDecimal> list:map.values()) {
             Collections.sort(list);
             int i = 0;
-            int j = list.size();
+            int j = list.size()-1;
+            int current = 0;
             while(i<j) {
-                if(Math.abs(list.get(i).).equals(list.get(j-1))) {
+               current =  list.get(i).abs().compareTo(list.get(j).abs());
+                if(current ==0) {
                     i++;
-                    j++;
-                } else ()
+                    j--;
+                } else if (current == -1) {
+                    removedNotPairValue.add(list.get(j));
+                    j--;
+                } else {
+                    removedNotPairValue.add(list.get(i));
+                    i++;
+                }
             }
+            if(list.get(i).abs().equals(list.get(j).abs()) && list.get(i).equals(list.get(j))) {removedNotPairValue.add(list.get(i));}
         }
 
         return removedNotPairValue;
