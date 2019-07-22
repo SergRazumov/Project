@@ -2,6 +2,7 @@ package com.company;
 
 import java.sql.*;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 public class Main {
@@ -21,6 +22,9 @@ public class Main {
     private static Queue<ResultSet> queueResultSet = new LinkedList<>();
     private static ResultSet rs;
 
+
+    //TODO: Поговорить об интерфейсах и методах
+
     public static void main(String args[]) {
 
         try {
@@ -28,16 +32,23 @@ public class Main {
             con = DriverManager.getConnection(url, user, password);
 
             // getting Statement object to execute query
-            stmt = con.createStatement();
-            stmt1 = con.createStatement();
-            stmt2 = con.createStatement();
-            stmt3 = con.createStatement();
+            for(int i = 0; i< 4; i++) {
+                queueStatement.offer(con.createStatement());
+            }
+//            stmt = con.createStatement();
+//            stmt1 = con.createStatement();
+//            stmt2 = con.createStatement();
+//            stmt3 = con.createStatement();
 
             // executing SELECT query
-            queueResultSet.offer(stmt.executeQuery("Select sum(a.population) from (select city.population from city WHERE city.countrycode IN (SELECT code from country where name = \"Russian federation\")) as a;"));
-            queueResultSet.offer(stmt1.executeQuery("Select headofState from country where code IN (Select countrycode from city where name = \"St Petersburg\")"));
-            queueResultSet.offer(stmt2.executeQuery("Select name from city where id IN (Select capital from  country where code IN (Select countrycode from city where name = \"Vladivostok\"));"));
-            queueResultSet.offer(stmt3.executeQuery("Select language from countryLanguage where countrycode IN (select code from country where headofstate = \"George W. Bush\") and isofficial = \"T\" GROUP BY language;"));
+            
+            //queueResultSet.offer(stmt.executeQuery("Select sum(a.population) from (select city.population from city WHERE city.countrycode IN (SELECT code from country where name = \"Russian federation\")) as a;"));
+
+
+            queueResultSet.offer(Objects.requireNonNull(queueStatement.poll()).executeQuery("Select sum(a.population) from (select city.population from city WHERE city.countrycode IN (SELECT code from country where name = \"Russian federation\")) as a;"));
+            queueResultSet.offer(Objects.requireNonNull(queueStatement.poll()).executeQuery("Select headofState from country where code IN (Select countrycode from city where name = \"St Petersburg\")"));
+            queueResultSet.offer(Objects.requireNonNull(queueStatement.poll()).executeQuery("Select name from city where id IN (Select capital from  country where code IN (Select countrycode from city where name = \"Vladivostok\"));"));
+            queueResultSet.offer(Objects.requireNonNull(queueStatement.poll()).executeQuery("Select language from countryLanguage where countrycode IN (select code from country where headofstate = \"George W. Bush\") and isofficial = \"T\" GROUP BY language;"));
             while (!queueResultSet.isEmpty()) {
                 rs = queueResultSet.poll();
                 System.out.println("Result select: ");
@@ -53,7 +64,7 @@ public class Main {
         } finally {
             //close connection ,stmt and result set here
             try { con.close(); } catch(SQLException se) { /*can't do anything */ }
-            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
+//            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
             try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
         }
     }
