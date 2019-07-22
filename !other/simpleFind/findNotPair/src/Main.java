@@ -13,16 +13,50 @@ public class Main {
         trades.add(new Trade("Grey", "a", new BigDecimal(310)));
         trades.add(new Trade("Grey", "a", new BigDecimal(-310)));
         trades.add(new Trade("White", "c", new BigDecimal(-50)));
-        getErrors(trades);
+        Map<MyKey, List<BigDecimal>> map = makeMap(trades);
+        System.out.println(removeValue(map));
+
     }
 
 
-
-    private static void getErrors(List<Trade> trades) {
+    private static Map<MyKey, List<BigDecimal>> makeMap(List<Trade> trades) {
         Map<MyKey, List<BigDecimal>> map = new HashMap<>();
         for(Trade trade: trades) {
             MyKey myKey = new MyKey(trade.getParameter(), trade.getTradeID());
-            map.put(myKey, myKey.addValue(trade.getAmount()));
+            if(map.containsKey(myKey)) {
+                map.get(myKey).add(trade.getAmount());
+            } else {
+                map.put(myKey, myKey.addValue(trade.getAmount()));
+            }
         }
+        return map;
     }
+
+    private static List<BigDecimal> removeValue(Map<MyKey, List<BigDecimal>> map) {
+        List<BigDecimal> removedNotPairValue = new ArrayList<>();
+        for(List<BigDecimal> list:map.values()) {
+            Collections.sort(list);
+            int i = 0;
+            int j = list.size()-1;
+            int current = 0;
+            while(i<j) {
+               current =  list.get(i).abs().compareTo(list.get(j).abs());
+                if(current ==0) {
+                    i++;
+                    j--;
+                } else if (current == -1) {
+                    removedNotPairValue.add(list.get(j));
+                    j--;
+                } else {
+                    removedNotPairValue.add(list.get(i));
+                    i++;
+                }
+            }
+            if(list.get(i).abs().equals(list.get(j).abs()) && list.get(i).equals(list.get(j))) {removedNotPairValue.add(list.get(i));}
+        }
+
+        return removedNotPairValue;
+    }
+
+
 }
