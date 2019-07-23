@@ -12,11 +12,18 @@
                 <value>2</value>
             </list>
         </constructor-arg>
-
     </bean>
+    <bean class="MyMap" name="map">
+        <constructor-arg >
 
 
-
+            <map>
+                <entry key = "1" value = "INDIA"/>
+                <entry key = "2" value = "CHINA"/>
+                <entry key = "3" value = "RUSSIAo"/>
+            </map>
+        </constructor-arg>
+    </bean>
 <!--    <bean class="beans.Car" name="car" init-method="startMethodForXml">-->
 <!--        <property name="marka" value="BMW"/>-->
 <!--        <property name="produceСountries">-->
