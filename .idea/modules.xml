@@ -53,8 +53,10 @@
       <module fileurl="file://$PROJECT_DIR$/!other/patterns/patterns.iml" filepath="$PROJECT_DIR$/!other/patterns/patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/quickSort+binaryFind/quickSort+binaryFind.iml" filepath="$PROJECT_DIR$/!differentsSort/quickSort+binaryFind/quickSort+binaryFind.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/quickSort+findNumber/quickSort+findNumber.iml" filepath="$PROJECT_DIR$/!differentsSort/quickSort+findNumber/quickSort+findNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!other/reflection/reflection.iml" filepath="$PROJECT_DIR$/!other/reflection/reflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/sberTreeCorrect/sberTreeCorrect.iml" filepath="$PROJECT_DIR$/!listType/sberTreeCorrect/sberTreeCorrect.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/setHashMapDictionary/setHashMapDictionary.iml" filepath="$PROJECT_DIR$/!listType/setHashMapDictionary/setHashMapDictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareMaven/shareMaven.iml" filepath="$PROJECT_DIR$/shareMaven/shareMaven.iml" />
       <module fileurl="file://$PROJECT_DIR$/shareMaven/shareMaven.iml" filepath="$PROJECT_DIR$/shareMaven/shareMaven.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/simpleNumberOrDifficult/simpleNumberOrDifficult.iml" filepath="$PROJECT_DIR$/!other/simpleNumberOrDifficult/simpleNumberOrDifficult.iml" />
       <module fileurl="file://$PROJECT_DIR$/!stream/streamClientsBank/streamClientsBank.iml" filepath="$PROJECT_DIR$/!stream/streamClientsBank/streamClientsBank.iml" />
