@@ -41,7 +41,7 @@ public class Main {
 //            stmt3 = con.createStatement();
 
             // executing SELECT query
-            
+
             //queueResultSet.offer(stmt.executeQuery("Select sum(a.population) from (select city.population from city WHERE city.countrycode IN (SELECT code from country where name = \"Russian federation\")) as a;"));
 
 
