@@ -16,7 +16,7 @@ public class TestRequest {
             connection.setRequestMethod("GET");
             int status = connection.getResponseCode();
             System.out.println(status + " " + connection.getResponseMessage());
-            for (var entry : connection.getHeaderFields().entrySet()) {
+            for (Map.Entry<String, java.util.List<String>> entry : connection.getHeaderFields().entrySet()) {
                 if (entry.getKey() != null ) {
                     System.out.println(entry.getKey() + ": " + entry.getValue());
                 }
