@@ -20,7 +20,7 @@ public class MyHandler extends AbstractHandler {
             HttpServletResponse response) throws IOException, ServletException {
 
         System.out.println("Handling request: " + target);
-        baseRequest.setHandled(true);
+        baseRequest.setHandled(true); // зачем помечать объект?
         response.setContentType("text/html; charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
         switch(request.getMethod()) { // возвращает строчку каким методом послан request

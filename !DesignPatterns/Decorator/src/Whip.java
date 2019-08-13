@@ -1,0 +1,25 @@
+public class Whip extends CondimentDecorator {
+
+    Beverage beverage;
+
+    public Whip(Beverage beverage) {
+        this.beverage = beverage;
+    }
+
+    @Override
+    public String getDescription() {
+        return beverage.getDescription() + ", Whip";
+    }
+
+    @Override
+    public double cost() {
+        if (beverage.getSize() == Size.TALL) {
+            return .20 + beverage.cost();
+        } else if (beverage.getSize() == Size.GRANDE) {
+            return .15 + beverage.cost();
+        } else if (beverage.getSize() == Size.VENTI) {
+            return .10 + beverage.cost();
+        }
+        return beverage.cost();
+    }
+}

@@ -13,7 +13,7 @@ public class StartStaticServer {
 
 	public static void main(String[] args) {
         Server server = new Server(8081);
-        ResourceHandler resourceHandler = new ResourceHandler();
+        ResourceHandler resourceHandler = new ResourceHandler(); // почему не могу посомтреть реализацию handler
         resourceHandler.setResourceBase("./Jetty01");
         server.setHandler(resourceHandler);
         try {

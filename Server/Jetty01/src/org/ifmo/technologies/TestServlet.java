@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,12 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 public class TestServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    @Override
+
+
+	@Override
     protected void doGet(
     		HttpServletRequest request,
     		HttpServletResponse response) {
     	
-    	String path = request.getPathInfo();
+    	String path = request.getPathInfo(); // получение and Dot?
     	response.setStatus(HttpServletResponse.SC_OK);
     	if (path.endsWith(".htm") || path.endsWith(".html")) {
     		response.setContentType("text/html; charset=UTF-8");
