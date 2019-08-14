@@ -12,6 +12,12 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MyHandler extends AbstractHandler {
+    private final String root;
+
+    public MyHandler(String root) {
+        this.root = root;
+    }
+
     @Override
     public void handle(
             String target,            // request URI
@@ -25,15 +31,18 @@ public class MyHandler extends AbstractHandler {
         response.setStatus(HttpServletResponse.SC_OK);
         switch(request.getMethod()) { // возвращает строчку каким методом послан request
             case "GET":
-                String fileName = "." + target;
+                String fileName = root + target;
                 try {
-                    BufferedReader reader = new BufferedReader(new FileReader(new File(fileName)));
+                    File file = new File(fileName);
+                    System.out.println(file.getAbsolutePath());
+                    BufferedReader reader = new BufferedReader(new FileReader(file));
                     String line;
                     while ((line = reader.readLine()) != null) {
                         response.getWriter().println(line);
                     }
                     reader.close();
                 } catch (IOException e) {
+                    System.out.println(e.getMessage());
                     response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                     response.getWriter().println("<h2>404 - PAGE NOT FOUND</h2>");
                     response.getWriter().format(

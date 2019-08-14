@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/!Students+QuickSort/!Students+QuickSort.iml" filepath="$PROJECT_DIR$/!differentsSort/!Students+QuickSort/!Students+QuickSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/!bigProject/BattleSea/BattleSea.iml" filepath="$PROJECT_DIR$/!bigProject/BattleSea/BattleSea.iml" />
       <module fileurl="file://$PROJECT_DIR$/!bigProject/BlackJack/BlackJack.iml" filepath="$PROJECT_DIR$/!bigProject/BlackJack/BlackJack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Decorator/Decorator.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Decorator/Decorator.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/simpleFind/Ex1/Ex1.iml" filepath="$PROJECT_DIR$/!other/simpleFind/Ex1/Ex1.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/simpleFind/Ex2/Ex2.iml" filepath="$PROJECT_DIR$/!other/simpleFind/Ex2/Ex2.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/simpleFind/Ex3/Ex3.iml" filepath="$PROJECT_DIR$/!other/simpleFind/Ex3/Ex3.iml" />
@@ -13,8 +14,10 @@
       <module fileurl="file://$PROJECT_DIR$/!other/simpleFind/Ex6/Ex6.iml" filepath="$PROJECT_DIR$/!other/simpleFind/Ex6/Ex6.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/Graphs/Graphs.iml" filepath="$PROJECT_DIR$/!listType/Graphs/Graphs.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/HashMap/HashMap.iml" filepath="$PROJECT_DIR$/!listType/HashMap/HashMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/Jetty01/Jetty01.iml" filepath="$PROJECT_DIR$/Server/Jetty01/Jetty01.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/MiniMax/MiniMax.iml" filepath="$PROJECT_DIR$/!other/MiniMax/MiniMax.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Observer/MyObserver/MyObserver.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Observer/MyObserver/MyObserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/MyServer/MyServer.iml" filepath="$PROJECT_DIR$/Server/MyServer/MyServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Observer/ObserverLibrary/ObserverLibrary.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Observer/ObserverLibrary/ObserverLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" filepath="$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" />
@@ -56,13 +59,9 @@
       <module fileurl="file://$PROJECT_DIR$/!other/reflection/reflection.iml" filepath="$PROJECT_DIR$/!other/reflection/reflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/sberTreeCorrect/sberTreeCorrect.iml" filepath="$PROJECT_DIR$/!listType/sberTreeCorrect/sberTreeCorrect.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/setHashMapDictionary/setHashMapDictionary.iml" filepath="$PROJECT_DIR$/!listType/setHashMapDictionary/setHashMapDictionary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shareMaven/shareMaven.iml" filepath="$PROJECT_DIR$/shareMaven/shareMaven.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shareMaven/shareMaven.iml" filepath="$PROJECT_DIR$/shareMaven/shareMaven.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/simpleNumberOrDifficult/simpleNumberOrDifficult.iml" filepath="$PROJECT_DIR$/!other/simpleNumberOrDifficult/simpleNumberOrDifficult.iml" />
       <module fileurl="file://$PROJECT_DIR$/!stream/streamClientsBank/streamClientsBank.iml" filepath="$PROJECT_DIR$/!stream/streamClientsBank/streamClientsBank.iml" />
       <module fileurl="file://$PROJECT_DIR$/!stream/streamsDifferent/streamsDifferent.iml" filepath="$PROJECT_DIR$/!stream/streamsDifferent/streamsDifferent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Maven/testMaven.iml" filepath="$PROJECT_DIR$/Maven/testMaven.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Maven/testProject.iml" filepath="$PROJECT_DIR$/Maven/testProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" filepath="$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/threadsTask/threadsTask.iml" filepath="$PROJECT_DIR$/!threads/threadsTask/threadsTask.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" filepath="$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" />

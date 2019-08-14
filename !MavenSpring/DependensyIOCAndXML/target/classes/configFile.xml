@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="musicPlayerValue.properties"/>
+
+    <bean id="musicPlayer" class="ru.razumov.MusicPlayer" init-method="runInitMethod" destroy-method="runDestroyMethod">
+        <constructor-arg name="music">
+            <bean class="java.util.LinkedList">
+                <constructor-arg>
+                    <list>
+                        <ref bean="RogBean"/>
+                        <ref bean="ClassicalBean"/>
+                        <ref bean="PopBean"/>
+                    </list>
+                </constructor-arg>
+            </bean>
+        </constructor-arg>
+
+        <property name="namePlayer" value="ipod"/>
+        <property name="value" value="${musicPlayer.value}"/>
+        <property name="mus" ref="RogBean"/>
+    </bean>
+
+
+
+    <bean id="RogBean" class="ru.razumov.RogMusic"/>
+    <bean id="PopBean" factory-method="getPopMusic" class="ru.razumov.PopMusic"/>
+    <bean id="ClassicalBean" scope="prototype" class="ru.razumov.ClassicMusic"/>
+
+</beans>

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,14 +18,17 @@ import javax.servlet.http.HttpServletResponse;
 public class TestServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Scanner scanner = new Scanner(req.getInputStream());
+    }
 
-
-	@Override
+    @Override
     protected void doGet(
     		HttpServletRequest request,
     		HttpServletResponse response) {
     	
-    	String path = request.getPathInfo(); // получение and Dot?
+    	String path = request.getPathInfo(); // получение and Dot
     	response.setStatus(HttpServletResponse.SC_OK);
     	if (path.endsWith(".htm") || path.endsWith(".html")) {
     		response.setContentType("text/html; charset=UTF-8");
@@ -35,7 +39,7 @@ public class TestServlet extends HttpServlet {
     	// Формируем относительное имя файла (относительно текущего каталога проекта)
 		String fileName = "." + path;
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(new File(fileName.replace('/', '\\'))));
+			BufferedReader reader = new BufferedReader(new FileReader(new File(fileName)));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				writeString(response, line);
@@ -49,7 +53,10 @@ public class TestServlet extends HttpServlet {
 					path));
 		}
     }
-    
+
+
+
+
     // Запросы PUT, POST, DELETE и другие не обрабатываются
     
     private void writeString(HttpServletResponse response, String message) {

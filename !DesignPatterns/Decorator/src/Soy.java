@@ -1,6 +1,6 @@
 public class Soy extends CondimentDecorator {
 
-    Beverage beverage;
+ //   Beverage beverage;
 
 
     public Soy(Beverage beverage) {
