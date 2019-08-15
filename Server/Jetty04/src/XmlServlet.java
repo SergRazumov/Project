@@ -46,15 +46,6 @@ public class XmlServlet extends HttpServlet {
     	return countryDoc;
     }
 
-    private static String toString(Document newDoc) throws TransformerFactoryConfigurationError, TransformerException {
-    	DOMSource domSource = new DOMSource(newDoc);
-    	Transformer transformer = TransformerFactory.newInstance().newTransformer();
-    	StringWriter sw = new StringWriter();
-    	StreamResult sr = new StreamResult(sw);
-    	transformer.transform(domSource, sr);
-    	return sw.toString();  
-    }
-
     @Override
     protected void doGet(
     		HttpServletRequest request,
@@ -68,7 +59,9 @@ public class XmlServlet extends HttpServlet {
 	    		response.setContentType("text/xml");
 	    		response.setCharacterEncoding("UTF8");
 	    		try {
-					response.getWriter().print(toString(createCountryDoc(country)));
+	    			DOMSource domSource = new DOMSource(createCountryDoc(country));
+					Transformer transformer = TransformerFactory.newInstance().newTransformer();
+					transformer.transform(domSource, new StreamResult(response.getWriter()));
 				} catch (IOException | TransformerFactoryConfigurationError | TransformerException | ParserConfigurationException e) {
 					response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 				}
