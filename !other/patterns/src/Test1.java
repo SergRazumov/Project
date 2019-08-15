@@ -39,5 +39,12 @@ public class Test1 {
         } else {
             System.out.println("Увы!");
         }
+
+        Pattern p = Pattern.compile("[a-zA-Zа-яА-я]+");
+        Matcher m = p.matcher("Сережа");
+        if(m.find()) {
+            System.out.println(m.group(0));
+        }
+
     }
 }
