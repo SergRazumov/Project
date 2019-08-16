@@ -14,4 +14,6 @@ public class Student {
     public void setGroup(int group) {
         this.group = group;
     }
+
+
 }

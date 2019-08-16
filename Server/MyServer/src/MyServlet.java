@@ -4,98 +4,94 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MyServlet extends HttpServlet {
 
-    private static Map<String, Student> map = new HashMap<>();
-
-
-    //TODO: Организовать отправку в .html страницу номера группы
+    private final static Map<String, Student> map = new HashMap<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String path = req.getPathInfo(); // получение and Dot
-        System.out.println(path);
+        String nameStud = req.getPathInfo();
+        String result = processName(req, resp);
         resp.setStatus(HttpServletResponse.SC_OK);
-        String result = processName(path);
-        if (map.get(result)!= null) {
-            System.out.println(map.get(result));
-        } else {
-            System.out.println("Имя ученика еще не создано ");
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        if (result!=null && map.get(result)!=null) {
+            resp.setContentType("text/html; charset=UTF-8");
+            writeString(resp, "<table>");
+            writeString(resp, String.format("<tr><td>%s</td><td>%d</td></tr>", result, map.get(result).getGroup()));
+            writeString(resp, "</table>");
+        } else if (result!=null && map.get(result)==null) {
+            resp.setContentType("text/plain; charset=UTF-8");
+            writeString(resp, "Информация о студенте " + nameStud.substring(1) + " не обнаружена");
+        } else if(result == null && !map.isEmpty()) {
+            resp.setContentType("text/html; charset=UTF-8");
+            writeString(resp, "<table>");
+            for(Map.Entry<String, Student> val:map.entrySet()) {
+                writeString(resp, String.format("<tr><td>%s</td><td>%d</td></tr>", val.getKey(), val.getValue().getGroup()));
+            }
+            writeString(resp, "</table>");
         }
     }
-//
-//        // Формируем относительное имя файла (относительно текущего каталога проекта)
-//        String fileName = "." + path;
-//        try {
-//            BufferedReader reader = new BufferedReader(new FileReader(new File(fileName)));
-//            String line;
-//            while ((line = reader.readLine()) != null) {
-//                writeString(response, line);
-//            }
-//            reader.close();
-//        } catch (IOException e) {
-//            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//            writeString(response, String.format(
-//                    "<h2>404 - PAGE NOT FOUND</h2>\n" +
-//                            "<p>Sorry, the requested page <code>%s</code> is not found</p>\n",
-//                    path));
-//        }
 
-    //TODO: Проверить на работоспособность
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String path = req.getPathInfo(); //получил andDot
-        System.out.println(path);
-        String result = processName(path);
-        Scanner scanner = new Scanner(req.getInputStream()); //получил объект
-        while (scanner.hasNext()) {
-            map.replace(result, new Student(Integer.parseInt(scanner.nextLine())));
-            resp.setStatus(HttpServletResponse.SC_CONTINUE);
-        }
-    }
-
-    //TODO: Проверить на работоспособность
-
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String path = req.getPathInfo(); //получил andDot
-        System.out.println(path);
-        String result = processName(path);
+        String result = processName(req, resp);
         Scanner scanner = new Scanner(req.getInputStream()); //получил объект
         while (scanner.hasNext()) {
             map.put(result, new Student(Integer.parseInt(scanner.nextLine())));
-            resp.setStatus(HttpServletResponse.SC_CONTINUE);
+            resp.setStatus(HttpServletResponse.SC_OK);
+        }
+    }
+
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String result = processName(req, resp);
+        Scanner scanner = new Scanner(req.getInputStream()); //получил объект
+        while (scanner.hasNext()) {
+            if(map.get(result)!=null) {
+                map.put(result, new Student(Integer.parseInt(scanner.nextLine())));
+                resp.setStatus(HttpServletResponse.SC_OK);
+            } else {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            }
         }
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String path = req.getPathInfo(); //получил andDot
-        System.out.println(path);
-        String result = processName(path);
+        String result = processName(req, resp);
         if(map.get(result)!=null) {
             map.remove(result);
-            resp.setStatus(HttpServletResponse.SC_CONTINUE);
+            resp.setStatus(HttpServletResponse.SC_OK);
         } else {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
     }
 
-    private String processName(String path) {
+    private String processName(HttpServletRequest req, HttpServletResponse resp) {
+        String path = req.getPathInfo(); //получил andDot
+        System.out.println(path);
+        if(path==null) return null; // почему String имеет null адрес?
         Pattern p = Pattern.compile("[a-zA-Zа-яА-я]+");
         Matcher m = p.matcher(path);
         if(m.find()) {
+            System.out.println(m.group(0));
             return  m.group(0);
         }
         return null;
     }
+
+    private void writeString(HttpServletResponse response, String message) {
+        try {
+            response.getWriter().println(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
