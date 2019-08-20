@@ -2,7 +2,7 @@ import java.lang.reflect.*;
 
 public class Main {
     public static void main(String[] args) {
-        Class myClass = Example.class;
+        Class<Example> myClass = Example.class;
         String nameClass = myClass.getName();
         System.out.println("Имя класса " + nameClass);
         int modifyClass = myClass.getModifiers();
@@ -25,16 +25,17 @@ public class Main {
 
         try {
             Constructor []myConstructors = myClass.getConstructors(); // получаем массив конструкторов класса
-            Constructor exMyConstructor = myClass.getConstructor(String.class); // что не так?
             Constructor myConstructor = Example.class.getConstructor(String.class); // ссылка на конструктор с параметром String
-            Class []parameterTypes = myConstructors[2].getParameterTypes(); // получаем параметры конструктора с инд. 0
+            Class []parameterTypes = myConstructors[2].getParameterTypes(); // получаем типы параметров какого-то конструктора
             Example exMyExampleCopy = (Example) myConstructor.newInstance("check"); // созд. экземляра класса с значением конструктора String
             Example newExampleCopy = (Example) myConstructors[2].newInstance(777); // созд. экземляра класса с значением конструктора 777, выбор из списка конструкторов
 
             Field[] myField = myClass.getFields(); // каждый эл. массива содержит экземляр поля public
+            myField = myClass.getDeclaredFields(); // каждый эл. массива содержит экземляр поля private
+            myField[0].setAccessible(true); // отключает проверку доступа для указанного поля. Теперь мы можем работать с ним с помощью рефлексии, даже если у него был private, protected или default доступ.
             Field myField2 = myClass.getField("randomVal");// получение доступа к полю по имени
-            String fieldName = myField2.getName(); // получить имя поля по его значению
-            Object fieldType = myField2.getType(); // получить тип поля по его значению
+            String fieldName = myField2.getName(); // получить имя поля
+            Object fieldType = myField2.getType(); // получить тип поля
 
             Example instance = new Example(); // создаем экземляр который создает значения полей
             Object value = myField2.get(instance); // получаем значение поля по имени randomVal с учетом созд объекта
@@ -42,12 +43,13 @@ public class Main {
             System.out.print(myField2.get(instance)); // проверяем изменилось ли значение
 
             Method []metods = myClass.getMethods(); // каждый эл. массива содержит по методу в классе Example
-            Method method = myClass.getMethod("setLine", String.class); // что не так?
-            method = Example.class.getMethod("setValue", int.class); // получаем метод с именем setValue
+            Method method = myClass.getMethod("setLine", String.class); // получаем метод с именем setLine и принимаемым параметром String
             Class []parameterType = method.getParameterTypes(); // получить параметры метода
             Class returnType = method.getReturnType(); // получить тип возвращаемое значения
             method = Example.class.getDeclaredMethod("setValue", parameterType); // можно private, получаем метод с именем setValue
             method.invoke(instance, 10); // вызов метода setValue через экземляр с именем  instance и передача значения 10
+
+
 
 
         } catch (NoSuchMethodException e) {
@@ -87,5 +89,39 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public static void printGettersOrSetters(Class aClass){
+        Method[] methods = aClass.getMethods();
+
+        for(Method method : methods){
+            if(isGetter(method)) System.out.println("getter: " + method);
+            if(isSetter(method)) System.out.println("setter: " + method);
+        }
+    }
+
+    public static boolean isGetter(Method method){
+        if (!method.getName().startsWith("get")) {
+            return false;
+        }
+        if (method.getParameterTypes().length != 0) {
+            return false;
+        }
+        if (void.class.equals(method.getReturnType())) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static boolean isSetter(Method method){
+        if (!method.getName().startsWith("set")) {
+            return false;
+        }
+        if (method.getParameterTypes().length != 1) {
+            return false;
+        }
+        return true;
     }
 }

@@ -1,17 +1,12 @@
 package org.ifmo.technologies;
 
-import java.io.BufferedReader;
-import java.io.File;
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.Server;
+
 import java.io.FileReader;
 import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.eclipse.jetty.server.Request;
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.handler.AbstractHandler;
+import java.lang.reflect.Constructor;
+import java.util.Properties;
 
 /**
  * Этот обработчик запросов общего назначения на самом деле распознает только
@@ -19,46 +14,26 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
  * если, конечно, такой файл (страница) существует.
  */
 public class FileHandler {
-
+    final static String propsName = "server/jetty01/param.properties";
 
 	public static void main(String[] args) {
         Server server = new Server(8080);
-        server.setHandler(new AbstractHandler() {
-        	@Override
-        	public void handle(
-        			String target,			// request URI
-        			Request baseRequest,	// базовый (необработанный) request
-        			HttpServletRequest request,	// запрос, "завернутый" в сервлетную оболочку
-        			HttpServletResponse response) throws IOException, ServletException {
-        		
-        		System.out.println("Handling request: " + target);
-        		baseRequest.setHandled(true);
-                response.setContentType("text/html; charset=utf-8");
-                response.setStatus(HttpServletResponse.SC_OK);
-        		switch(request.getMethod()) {
-        			case "GET":
-        				String fileName = "." + target;
-        				try {
-        					BufferedReader reader = new BufferedReader(new FileReader(new File(fileName.replace('/', '\\'))));
-        					String line;
-        					while ((line = reader.readLine()) != null) {
-        						response.getWriter().println(line);
-        					}
-        					reader.close();
-        				} catch (IOException e) {
-        			        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-        			        response.getWriter().println("<h2>404 - PAGE NOT FOUND</h2>");
-        			        response.getWriter().format(
-        			        		"<p>Sorry, the requested page <code>%s</code> is not found</p>\n", target);
-        				}
-        				break;
-        			default:
-        		        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        		        response.getWriter().println("Bad request");
-        		}
-        	}
-        });
+		Properties props = new Properties();
+		String handlerName;
+		String root;
+		try {
+			props.load(new FileReader(propsName));
+			handlerName = props.getProperty("handler");
+			root = props.getProperty("root");
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
         try {
+            Class<Handler> handlerClass = (Class<Handler>)Class.forName(handlerName);
+            Constructor<Handler> handlerConstructor = handlerClass.getConstructor(String.class);
+            Handler handler = handlerConstructor.newInstance(root);
+            server.setHandler(handler);
 			server.start();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -13,5 +13,6 @@ public class Сomposition {
         int n = Integer.parseInt(args[0]);
 
         System.out.println("Сумма значений " + sumDigits(n));
+        System.out.println(Integer.parseInt("12"));
         }
     }
