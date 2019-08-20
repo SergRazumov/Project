@@ -41,11 +41,12 @@ public class MusicPlayer {
     }
 
     public void getSound() {
+        System.out.println("wtf");
         System.out.println("Играет музыка ");
         music.getSound();
     }
 
-    public void setMusic(Music music) {
-        music.getSound();
+//    public void setMusic(Music music) {
+//        music.getSound();
     }
-}
+

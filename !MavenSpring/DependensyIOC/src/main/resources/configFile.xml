@@ -7,12 +7,12 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="ru.alishev.springcourse"/>
+<!--    <context:component-scan base-package="ru.alishev.springcourse"/>-->
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="Player" class="ru.alishev.springcourse.MusicPlayer" scope="singleton" init-method="doMyInit" destroy-method="doMyDestroy">
         <!--<constructor-arg ref="MusicBean"/>-->
-
         <property name="listMusic">
             <list>
                 <ref bean="RogBean"/>
@@ -28,7 +28,6 @@
     </bean>
 
     <bean id="ClassicalBean" class="ru.alishev.springcourse.ClassicalMusic">
-
     </bean>
 
 </beans>
