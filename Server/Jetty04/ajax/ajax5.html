@@ -20,7 +20,7 @@
     }
     
     function fillResult(result) {
-      var json = eval("(" + result + ")");
+      var json = eval("(" + result + ")"); // преобразует все что угодно внутри в json
       document.getElementById('name').innerHTML = json.name;
       document.getElementById('iso').innerHTML = json.iso;
       document.getElementById('english').innerHTML = json.englishName;

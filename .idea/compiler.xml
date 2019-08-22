@@ -8,13 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="shareMaven" />
         <module name="testProject" />
+        <module name="OldConfigsWebApps" />
+        <module name="tomcatPluginRunnerExample" />
         <module name="testMaven" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="OldConfigsWebApps" target="1.5" />
       <module name="shareMaven" target="1.5" />
       <module name="testMaven" target="1.5" />
       <module name="testProject" target="1.5" />
+      <module name="tomcatPluginRunnerExample" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

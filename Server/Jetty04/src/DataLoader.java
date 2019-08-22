@@ -23,15 +23,17 @@ public class DataLoader {
 	private void loadData() {
 		Document doc;
 		try {
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder db = dbf.newDocumentBuilder(); 
-			doc = db.parse(new File("Server/Jetty04/countries.xml"));
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); // объект позволяет получить анализатор, который создает DOM из XML
+			DocumentBuilder db = dbf.newDocumentBuilder(); // объект позволяет получить документ из XML
+			doc = db.parse(new File("Server/Jetty04/countries.xml")); // парсит File, URI, InputStream ?
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 			e.printStackTrace();
 			return;
 		}
 
-		NodeList countryList = doc.getDocumentElement().getElementsByTagName("country");
+		NodeList countryList = doc.getDocumentElement().getElementsByTagName("country"); // получаем NodeList с тегами country
+		// NodeList countryList = doc.getElementsByTagName("country"); ?
+
 		int size = countryList.getLength();
 		for (int i = 0; i < size; i++) {
 			Node country = countryList.item(i);

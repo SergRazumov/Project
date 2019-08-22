@@ -8,7 +8,7 @@
       xhr.onreadystatechange =
         function () {
           if (xhr.readyState == 4) {
-            fillResult(xhr.status == 200 ? xhr.responseText : "Ошибка " + xhr.status + "!");
+            fillResult(xhr.status == 200 ? xhr.responseText : "Ошибка " + xhr.status + "!"); // когда происходит вывод? После завершения fillResult
           }
         };
       xhr.open("GET", "http://localhost:8081/countries/txt/" + code.toUpperCase(), true);

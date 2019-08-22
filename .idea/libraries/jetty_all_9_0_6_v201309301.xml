@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jetty-all-9.0.6.v201309301">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Server/lib/jetty-all-9.0.6.v20130930.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

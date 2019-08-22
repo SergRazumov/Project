@@ -9,7 +9,7 @@
         function () {
           if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-              fillResult(xhr.responseXML);
+              fillResult(xhr.responseXML); // пришел в виде текстовом или XML?
             } else {
               alert("Ошибка " + xhr.status + "!");
             }

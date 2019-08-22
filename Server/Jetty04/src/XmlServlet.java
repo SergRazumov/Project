@@ -24,14 +24,16 @@ public class XmlServlet extends HttpServlet {
     
     static {
     	try {
-			docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder(); // через класс фабрики создаем DocumentBuilder для создания Document
+
 		} catch (ParserConfigurationException e) {
 		}
     }
     
     private static Element createSimpleElement(Document doc, String tag, String text) {
-    	Element element = doc.createElement(tag);
+    	Element element = doc.createElement(tag); // почему создается не через Node and NodeList
     	element.appendChild(doc.createTextNode(text));
+    	// element.setNodeValue(text); почему нет так?
     	return element;
     }
     
@@ -59,9 +61,9 @@ public class XmlServlet extends HttpServlet {
 	    		response.setContentType("text/xml");
 	    		response.setCharacterEncoding("UTF8");
 	    		try {
-	    			DOMSource domSource = new DOMSource(createCountryDoc(country));
+	    			DOMSource domSource = new DOMSource(createCountryDoc(country)); // Выступает в качестве держателя для исходного дерева преобразования в форме дерева объектной модели документа (DOM).
 					Transformer transformer = TransformerFactory.newInstance().newTransformer();
-					transformer.transform(domSource, new StreamResult(response.getWriter()));
+					transformer.transform(domSource, new StreamResult(response.getWriter())); // преобразование источник XML в текстовый результат
 				} catch (IOException | TransformerFactoryConfigurationError | TransformerException | ParserConfigurationException e) {
 					response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 				}

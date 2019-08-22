@@ -8,7 +8,13 @@ import java.util.Queue;
 public class Main {
 
     // JDBC URL, username and password of MySQL server
-    private static final String url = "jdbc:mysql://root:F1c7a657@localhost:3306/world";
+    private static final String url = "jdbc:mysql://root:F1c7a657@localhost:3306/world"+
+            "?verifyServerCertificate=false"+
+            "&useSSL=false"+
+            "&requireSSL=false"+
+            "&useLegacyDatetimeCode=false"+
+            "&amp"+
+            "&serverTimezone=UTC";
     private static final String user = "root";
     private static final String password = "F1c7a657";
 

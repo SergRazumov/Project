@@ -15,15 +15,18 @@
       <module fileurl="file://$PROJECT_DIR$/!listType/Graphs/Graphs.iml" filepath="$PROJECT_DIR$/!listType/Graphs/Graphs.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/HashMap/HashMap.iml" filepath="$PROJECT_DIR$/!listType/HashMap/HashMap.iml" />
       <module fileurl="file://$PROJECT_DIR$/Server/Jetty01/Jetty01.iml" filepath="$PROJECT_DIR$/Server/Jetty01/Jetty01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/Jetty04/Jetty04.iml" filepath="$PROJECT_DIR$/Server/Jetty04/Jetty04.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/MiniMax/MiniMax.iml" filepath="$PROJECT_DIR$/!other/MiniMax/MiniMax.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Observer/MyObserver/MyObserver.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Observer/MyObserver/MyObserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/Server/MyServer/MyServer.iml" filepath="$PROJECT_DIR$/Server/MyServer/MyServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Observer/ObserverLibrary/ObserverLibrary.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Observer/ObserverLibrary/ObserverLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/Yaroslav2/OldConfigsWebApps.iml" filepath="$PROJECT_DIR$/Server/Yaroslav2/OldConfigsWebApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" filepath="$PROJECT_DIR$/!differentsSort/QSort/QSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/!DesignPatterns/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/!DesignPatterns/Strategy/Strategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" filepath="$PROJECT_DIR$/!threads/ThreadsSummaTwoLists/ThreadsSummaTwoLists.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/Trie/Trie.iml" filepath="$PROJECT_DIR$/!listType/Trie/Trie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/Yaroslav/Yaroslav.iml" filepath="$PROJECT_DIR$/Server/Yaroslav/Yaroslav.iml" />
       <module fileurl="file://$PROJECT_DIR$/!differentsSort/bubbleSort/bubbleSort.iml" filepath="$PROJECT_DIR$/!differentsSort/bubbleSort/bubbleSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/calendarBirthday/calendarBirthday.iml" filepath="$PROJECT_DIR$/!other/calendarBirthday/calendarBirthday.iml" />
       <module fileurl="file://$PROJECT_DIR$/!recursionProjects/cashBackCoins/cashBackCoins.iml" filepath="$PROJECT_DIR$/!recursionProjects/cashBackCoins/cashBackCoins.iml" />
@@ -64,6 +67,7 @@
       <module fileurl="file://$PROJECT_DIR$/!stream/streamsDifferent/streamsDifferent.iml" filepath="$PROJECT_DIR$/!stream/streamsDifferent/streamsDifferent.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" filepath="$PROJECT_DIR$/!threads/threadMatrix/threadMatrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/!threads/threadsTask/threadsTask.iml" filepath="$PROJECT_DIR$/!threads/threadsTask/threadsTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/Yaroslav/tomcatPluginRunnerExample.iml" filepath="$PROJECT_DIR$/Server/Yaroslav/tomcatPluginRunnerExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" filepath="$PROJECT_DIR$/!listType/treesdifferent/treesdifferent.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/useEvents/useEvents.iml" filepath="$PROJECT_DIR$/!other/useEvents/useEvents.iml" />
       <module fileurl="file://$PROJECT_DIR$/!other/workWithTriangle/workWithTriangle.iml" filepath="$PROJECT_DIR$/!other/workWithTriangle/workWithTriangle.iml" />

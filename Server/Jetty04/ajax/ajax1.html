@@ -7,8 +7,8 @@
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange =
         function () {
-          if (xhr.readyState == 4) {
-            alert(xhr.status == 200 ? xhr.responseText : "Ошибка " + xhr.status + "!");
+          if (xhr.readyState === 4) {
+            alert(xhr.status === 200 ? xhr.responseText : "Ошибка " + xhr.status + "!");
           }
         };
       xhr.open("GET", "http://localhost:8081/countries/name/" + code.toUpperCase(), true);
